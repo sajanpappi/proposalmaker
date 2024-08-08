@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Maker</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ question }}</h1>
+        <form method="post" action="{% url 'index' %}">
+            {% csrf_token %}
+            <input type="hidden" name="previous_question" value="{{ question }}">
+            <input type="text" name="user_input" id="userInput" placeholder="Your answer...">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- main/templates/main/proposal.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generated Proposal</title>
+</head>
+<body>
+    <h1>Generated Proposal</h1>
+    <p>{{ proposal }}</p>
+    <form action="{% url 'download_proposal' %}" method="get">
+        <button type="submit">Download Proposal as Word Document</button>
+    </form>
+</body>
+</html>
